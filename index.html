@@ -35,8 +35,8 @@
                         el momento preciso. Este proyecto busca ayudar a las personas a que puedan saber 
                         un poco más de la música, por ejemplo a que puedan ver como van cambiando las 
                         duraciones de la canciones a medida que van pasando los años, también a que puedan 
-                        ver cómo fueron evolucionando los géneros con los años y por último poder ver 
-                        la danceabilidad de los diferentes géneros con los años, con lo cual podremos 
+                        ver cómo fueron evolucionando la popularidad de los géneros con los años y por último poder ver 
+                        la danceabilidad de los diferentes géneros con respecto a los años, con lo cual podremos 
                         encontrar los generos que más nos gusten y que sean más bailables. 
                     </p>
                     <p>
@@ -55,20 +55,21 @@
                     <p>
                         Como se dijo anteriormente, los datos fueron sacados de la página de Kaggle, 
                         los cuales vienen de la plataforma de Spotify. Cabe mencionar que el dataset
-                        proveniente de Spotify, no tenía todos los datos que necesitabamos, en espwecial 
+                        proveniente de Spotify, no tenía todos los datos que necesitabamos, en especial 
                         el atributo del año de lanzamiento de la canción, por lo que tuvimos que buscar
                         otro dataset que mostrara infomación de las canciones y además el año de lanzamiento.
                         Para el procesamiento de los datos, quisimos hacer un merge de los dos datasets para 
-                        así tener toda la infromación necesaria para las visualizaciones. Y para poder hacer el merge,
-                        tuvimos que hacer una limpieza en ambos datasets, entre esas tareas, eliminamos ciertas 
-                        columnas que no nos servirían, además de eliminar las filas que tenían datos nulos. 
-                        También renombramos algunas columnas devido a que tenían nombres muy largos y no eran
-                        muy intuitivos.
+                        así tener toda la información necesaria para las visualizaciones. Para poder hacer el merge,
+                        tuvimos que hacer una limpieza en ambos datasets, algunas de las tareas fueron: eliminamos ciertas 
+                        columnas que no nos servirían, además de eliminar las filas que tenían datos nulos y
+                        también renombramos algunas columnas debido a que tenían nombres muy largos y eran poco
+                        intuitivos.
                     </p>
                     <p>
                         Luego de tener los dos datasets limpios, procedimos a hacer el merge, el cual lo hicimos
                         con respecto a los atributos: nombre de la canción y nombre del artista, ya que era el atributo que 
-                        tenían en común ambos datasets. Y finalmente eliminamos las filas repetidas que se generaron.
+                        tenían en común ambos datasets. Finalmente eliminamos las filas repetidas que se generaron.
+                        En total logramos obtener un dataset con 1695 filas y 10 columnas.
                         Todo este procedimiento quedó guardado en un archivo de Jupyter Notebook, el cual se encuentra
                         dentro del repositorio con el nombre de "PreProcesamiento.ipynb".
                     </p>
@@ -80,8 +81,8 @@
                     <p>
                         El usuario objetivo de este proyecto son las personas que les gusta la música 
                         y que quieren saber un poco más de ella, como por ejemplo, saber cómo han 
-                        cambiado los géneros con el paso de los años, o saber cuáles son los géneros 
-                        más bailables, etc.
+                        cambiado los géneros y las canciones con el paso de los años, o saber cuáles 
+                        son los géneros más populares y más bailables para cada año, etc.
                     </p>
                 </div>
                 <div class="response">
@@ -89,10 +90,10 @@
                     <!-- Puedes agregar los P que sean necesarios -->
                     <h4>Respuesta:</h4>
                     <p>
-                        El usuario podrá interactuar con la herramienta que creeemos, de manera que
+                        El usuario podrá interactuar con la herramienta que creemos, de manera que
                         pueda ver los datos de una manera más visual y que pueda sacar sus propias
-                        conclusiones de los datos que se le presenten. Y haciendo tambien que pueda 
-                        buscar por sus propios intereses y gustos.  
+                        conclusiones de los datos que se le presenten. Además podrá navegar por las 
+                        visualizaciones de manera de recorrer a su gusto y tiempo.  
                     </p>
                 </div>
 
@@ -105,9 +106,9 @@
                     <!-- Puedes agregar los P que sean necesarios -->
                     <h4>Respuesta:</h4>
                     <p>
-                        Los datos que se utilizarán serán los de la plataforma de Spotify, los cuales 
-                        se encuentran en la página de Kaggle. Estos datos son de las canciones que se 
-                        encuentran en Spotify y que fueron sacados de la API de Spotify. 
+                        Los datos que se utilizarán serán los de la plataforma de Spotify y un segundo dataset de canciones, los cuales 
+                        se encuentran ambos en la página de Kaggle. Luego de hacer el merge de ambos datasets (explicado en 
+                        la sección fuente original de los datos), se obtuvo un dataset con 1695 filas y 10 columnas. 
                     </p>
                     <p>
                         Este dataset tabular y estático, cuenta con varios atributos, entre ellos: El nombre de la canción,
@@ -166,23 +167,67 @@
                         Para la primera visualización, se quiere mostrar la duración de las canciones a 
                         través de los años, para así poder ver si las canciones han ido aumentando o
                         disminuyendo su duración con el paso de los años.
-                        La tarea a realizar es Consultar - comparar las duraciones a traves de los años.
-                        La justificación de esta tarea es que se quiere ver si las canciones han ido
+                        La tarea a realizar es consultar => comparar las duraciones a traves de los años.
+                    </p>
+                    <p>
+                        El objetivo de esta tarea es que se quiere ver si las canciones han ido
                         aumentando o disminuyendo su duración con el paso de los años, para así poder
                         ver si las canciones de ahora son más cortas que las de antes o viceversa.
+                    </p>
+                    <p>
+                        Con respecto a la justificación según el dominio, esto se va a realizar
+                        con el atributo de duración de las canciones y con el
+                        atributo de año en que se lanzó la canción, por lo que podremos hacer una
+                        visualización de estos dos atributos.
                     </p>
                 </div>
                 <div class="response">
                     <h4>Tarea 2 (acción + objetivo) + justificación según el dominio presentado</h4>
                     <!-- Puedes agregar los P que sean necesarios -->
                     <h4>Respuesta:</h4>
-                    <p>Modifica solo este texto (no el de arriba) para poner tu respuesta</p>
+                    <p>
+                        Para la segunda visualización, se quiere mostrar la popularidad que los géneros que van teniendo 
+                        a través de los años, para así poder ver si los géneros han ido aumentando o
+                        disminuyendo su popularidad con el paso de los años. En esta visualización también se podrá apreciar 
+                        cuando surgen los diferentes géneros.
+                        La tarea a realizar es analizar/consumir información => presentar la popularidad de los generos a traves de los años.
+                    </p>
+                    <p>
+                        El objetivo de esta tarea es que se quiere poder ver cómo los géneros han ido
+                        variando su popularidad con el paso de los años, para así poder
+                        ver si los géneros más nuevos son más populares que los de antes o viceversa.                    
+                    </p>
+                    <p>
+                        Con respecto a la justificación según el dominio, esto se va a realizar
+                        con los atributos de popularidad de cada canción (donde va a ser el 
+                        promedio donde las canciones se van a agrupar por año y por género), 
+                        además usaremos el atributo de año de lanzamiento y el género mismo de 
+                        cada canción para poder hacer la visualización.
+                    </p>
                 </div>
                 <div class="response">
                     <h4>Tarea 3 (acción + objetivo) + justificación según el dominio presentado</h4>
                     <!-- Puedes agregar los P que sean necesarios -->
                     <h4>Respuesta:</h4>
-                    <p>Modifica solo este texto (no el de arriba) para poner tu respuesta</p>
+                    <p>
+                        Para la tercera visualización, se quiere mostrar la danceabilidad que los géneros van teniendo 
+                        a través de los años, para así poder conocer y comprar qué géneros eran los más bailables
+                        en el pasado y cuales son los que son más bailables en la actualidad.
+                        La tarea a realizar es analizar/consumir información => descubrir los géneros más bailables a traves de los años.
+                    </p>
+                    <p>
+                        El objetivo de esta tarea es que se quiere poder ver como van evolucionando 
+                        los géneros en cuanto a su danceabilidad, para así poder ver si los géneros 
+                        más nuevos son más bailables que los de antes o viceversa. Por otro lado, también 
+                        podremos conocer cual era el género más popular para cada año con respecto a su danceabilidad.                   
+                    </p>
+                    <p>
+                        Con respecto a la justificación según el dominio, esto se va a realizar
+                        con los atributos de danceabilidad de cada canción (donde se va a hacer el 
+                        promedio donde las canciones se van a agrupar por año y por género), 
+                        además usaremos el atributo de año de lanzamiento y el género mismo de 
+                        cada canción para poder hacer la visualización.
+                    </p>
                 </div>
         </div>
 
@@ -192,19 +237,45 @@
                     <h4>Decisiones de diseño relacionadas a la primera tarea visual</h4>
                     <!-- Puedes agregar los P que sean necesarios -->
                     <h4>Respuesta:</h4>
-                    <p>Modifica solo este texto (no el de arriba) para poner tu respuesta</p>
+                    <p>
+                        Para la primera visualización, se quiere comparar las duraciones de las 
+                        canciones a través de los años. Para ello, se usará un gráfico de dispersión
+                        donde el eje X será el año y el eje Y será la duración de la canción. Además,
+                        se usará un color para cada género, para así poder diferenciarlos. Por otro lado,
+                        en esta visualización se podrá acercar y alejar el gráfico, para así poder ver
+                        y navegar mejor por los datos. También se podrá hacer hover sobre cada punto (canción)
+                        para ver la información más relevante de cada canción. 
+                    </p>
                 </div>
                 <div class="response">
                     <h4>Decisiones de diseño relacionadas a la segunda tarea visual</h4>
                     <!-- Puedes agregar los P que sean necesarios -->
                     <h4>Respuesta:</h4>
-                    <p>Modifica solo este texto (no el de arriba) para poner tu respuesta</p>
+                    <p>
+                        Para la segunda visualización, se quiere presentar la popularidad de los 
+                        generos a traves de los años. Para ello, se utilizará un gráfico de multilineas
+                        donde el eje X será el año y el eje Y será la popularidad de la canción. Además,
+                        se usará un color para cada género, para así poder diferenciarlos. Por otro lado,
+                        en esta visualización se podrá acercar y alejar el gráfico, para así poder ver
+                        y navegar mejor por los datos. También se podrá hacer hover sobre cada línea (género)
+                        para ver la información de popularidad de ese año en específico. 
+                    </p>
                 </div>
                 <div class="response">
                     <h4>Decisiones de diseño relacionadas a la tercera tarea visual</h4>
                     <!-- Puedes agregar los P que sean necesarios -->
                     <h4>Respuesta:</h4>
-                    <p>Modifica solo este texto (no el de arriba) para poner tu respuesta</p>
+                    <p>
+                        Para la tercera visualización, se quiere descubrir los géneros más 
+                        bailables a través de los años. Para esto, se utilizará un estilo de gráfico 
+                        de mapa de calor donde el eje X será el año y el eje Y será el género, y en cada 
+                        celda se mostrará el promedio de la danceabilidad de ese género en ese año. 
+                        Además, se usará un color para cada género, para así poder diferenciarlos y a medida que una celda
+                        es más bailable (danceabilidad más alta) el color será más oscuro. Por otro lado,
+                        en esta visualización se podrá acercar y alejar el gráfico, para así poder ver
+                        y navegar mejor por los datos. También se podrá hacer hover sobre cada celda (género)
+                        para ver la información de danceabilidad de ese año en específico.
+                    </p>
                 </div>
         </div>
 
