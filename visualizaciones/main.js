@@ -167,7 +167,7 @@ d3.csv(PATHDATASET).then(function (data_csv) {
             infoTextSong.text(`Canción: ${d.fromElement.__data__.track_name}`);
             infoTextArtist.text(`Artista: ${d.fromElement.__data__.artist_name}`);
             infoTextYear.text(`Año de lanzamiento: ${d.fromElement.__data__.release_date}`);
-            infoTextDuration.text(`Duración: ${d.fromElement.__data__.duration}`);
+            infoTextDuration.text(`Duración: ${d.fromElement.__data__.duration/1000}`);
             infoTextDanceability.text(`Daceabilidad: ${d.fromElement.__data__.danceability}`);
         })
         .on("mouseout", function () {
